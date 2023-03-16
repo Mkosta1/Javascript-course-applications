@@ -1,21 +1,38 @@
-body {
-    margin: 0px;
-    padding: 0px;
+  .hide {
+    display: none;
+  }
 
-}
+  .car {
+    position: absolute;
+    bottom: 100px;
+    margin: auto; 
+    width: 50px;
+    height: 100px;
+    background-image: url(car.png);
+    background-size: cover;
+  }
 
-.app {
-    width: 100%;
+  .enemy {
+    position: absolute;
+    bottom: 100px;
+    margin: auto; 
+    width: 50px;
+    height: 100px;
+    background-image: url(car.enemy.png);
+    background-size: cover;
+  }
+  
+  .gameArea {
+    background-color: black;
+    width: 300px;
     height: 100%;
-}
+    overflow: hidden;
+    position: absolute;
+    margin: auto;
+    left: 38%;
+  }
 
-.road-row {
-    width: 100%;
-    display: flex;
-    
-}
-
-.leftedge{
+  .leftedge{
     background-color: greenyellow;
     height: 100%;
     min-height: 100%;
@@ -40,7 +57,33 @@ body {
     height: 100%;
     min-height: 100%;
     max-height: 100%;
-
     width: 60%;
 
 }
+
+  .line {
+    position: absolute;
+    height: 100px;
+    width: 10px;
+    margin-left: 150px;
+    background-color: white;
+  }
+
+
+  .score { 
+    background-color: aquamarine;
+    height: 50px;
+    text-align: center;
+    color: black;
+    font-size: 1em;
+    font-family: fantasy;
+  }
+
+  .startScreen {
+    text-align: center;
+    border: 1px solid red;
+    padding: 15px;
+    margin: auto;
+    width: 300px;
+  }
+   

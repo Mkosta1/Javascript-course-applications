@@ -1,4 +1,5 @@
-import { RoadRow } from "../Domain/roadRow.js";
+
+import { RoadRow } from "/roadRow.js";
 
 export class Game{
     constructor(){
