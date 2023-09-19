@@ -4,6 +4,7 @@ export abstract class BaseService {
 
     private static hostBaseURL="http://localhost:5281/api/";
 
+    // For Azure deplyment https://sportschoolapp.azurewebsites.net/api/
     protected axios: AxiosInstance;
 
     constructor(baseUrl: string){

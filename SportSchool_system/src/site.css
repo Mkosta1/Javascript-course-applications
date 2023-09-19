@@ -23,6 +23,7 @@ html {
 
 body {
   margin-bottom: 60px;
+  background-color: rgb(215, 215, 242);
 }
 
 
@@ -72,4 +73,10 @@ button.accept-policy {
   width: 100%;
   white-space: nowrap;
   line-height: 60px;
+}
+
+.boxed-element {
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 5px;
 }

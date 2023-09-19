@@ -16,6 +16,7 @@ const Register = () => {
         email: "",
         firstName: "",
         lastName: "",
+        sportsSchoolId: "234463d0-e2d6-4864-af04-1cf25897b570"
     } as IRegisterData);
 
     const [validationErrors, setValidationErrors] = useState([] as string[]);
@@ -35,7 +36,8 @@ const Register = () => {
         console.log('onSubmit', event);
         event.preventDefault();
 
-        if (values.firstName.length == 0 || values.lastName.length == 0 || values.email.length == 0 || values.password.length == 0 || values.password != values.confirmPassword) {
+        if (values.firstName.length == 0 || values.lastName.length == 0 || values.email.length == 0 
+            || values.password.length == 0 || values.password != values.confirmPassword) {
             setValidationErrors(["Bad input values!"]);
             return;
         }

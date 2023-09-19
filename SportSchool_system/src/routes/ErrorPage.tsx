@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useRouteError } from "react-router-dom";
 
 interface iError {
@@ -16,6 +17,7 @@ const ErrorPage = () => {
             <p>
                 <i>{error.statusText || error.message}</i>
             </p>
+            <Link to="/">Head back to home page</Link>
         </div>
     );
 }

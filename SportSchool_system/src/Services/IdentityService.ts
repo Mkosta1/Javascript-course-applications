@@ -1,15 +1,15 @@
+import { ICompetitionData } from "../dto/Competition/ICompetitionData";
 import { IJWTResponse } from "../dto/IJWTResponse";
 import { ILoginData } from "../dto/ILoginData";
 import { IRegisterData } from "../dto/IRegisterData";
 import { BaseService } from "./BaseService";
 
 export class IdentityService extends BaseService {
-    constructor(){
+    constructor() {
         super('v1/identity/account/');
     }
 
-
-    async register(data: IRegisterData): Promise<IJWTResponse | undefined>{
+    async register(data: IRegisterData): Promise<IJWTResponse | undefined> {
         try {
             const response = await this.axios.post<IJWTResponse>('register', data);
 
@@ -18,7 +18,6 @@ export class IdentityService extends BaseService {
                 return response.data;
             }
             return undefined;
-
         } catch (e) {
             console.log('error: ', (e as Error).message);
             return undefined;
@@ -42,7 +41,7 @@ export class IdentityService extends BaseService {
 
     async logout(data: IJWTResponse): Promise<true | undefined> {
         console.log(data);
-        
+
         try {
             const response = await this.axios.post(
                 'logout', 
@@ -64,6 +63,39 @@ export class IdentityService extends BaseService {
             return undefined;
         }
     }
+
+    async refreshToken(data: IJWTResponse): Promise<IJWTResponse | undefined> {
+        console.log(data);
+        
+        try {
+            const response = await this.axios.post<IJWTResponse>(
+                'refreshtoken', 
+                data
+            );
+
+            console.log('refresh token response', response);
+            if (response.status === 200) {
+                return response.data;
+            }
+            return undefined;
+        } catch (e) {
+            console.log('error: ', (e as Error).message);
+            return undefined;
+        }
+    }
+    // async addCompetiton(data: ICompetitionData): Promise<IJWTResponse | undefined> {
+    //     try {
+    //         const response = await this.axios.post<IJWTResponse>('Competition', data);
+
+    //         if (response.status === 200) {
+    //             return response.data;
+    //         }
+    //         return undefined;
+    //     } catch (e) {
+    //         console.log('error: ', (e as Error).message);
+    //         return undefined;
+    //     }
+    // }
 
 
 }

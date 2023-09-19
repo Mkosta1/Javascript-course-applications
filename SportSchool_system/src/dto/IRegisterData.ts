@@ -4,4 +4,5 @@ export interface IRegisterData {
     email: string,
     firstName: string,
     lastName: string,
+    sportsSchoolId: string
 }
